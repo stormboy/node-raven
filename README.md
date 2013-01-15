@@ -5,3 +5,5 @@ A Node library for communicating with a RFA-Z106 RAVEn USB stick.  This device i
 
 First, the USB stick must be paired with the meter.  Your electricity distributor (whoever is responsible for the meter) should provide a procedure to pair the meter and the device.
 
+Tested on BeagleBone with Angstrom distro v2012-05.  The Raspberry Pi does not supply enough USB power for this device without a powered-USB hub.  The RAVEn requires up to 500mA.
+
