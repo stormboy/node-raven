@@ -10,6 +10,6 @@ Tested on BeagleBone with Angstrom distro v2012-05.  The Raspberry Pi does not s
 Dependencies
 ------------
 
-npm install serialport
-npm install mqttjs
-npm install xml2js
+  npm install serialport
+  npm install mqttjs
+  npm install xml2js
