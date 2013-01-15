@@ -7,3 +7,9 @@ First, the USB stick must be paired with the meter.  Your electricity distributo
 
 Tested on BeagleBone with Angstrom distro v2012-05.  The Raspberry Pi does not supply enough USB power for this device without a powered-USB hub.  The RAVEn requires up to 500mA.
 
+Dependencies
+------------
+
+npm install serialport
+npm install mqttjs
+npm install xml2js
