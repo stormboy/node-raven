@@ -7,9 +7,16 @@ First, the USB stick must be paired with the meter.  Your electricity distributo
 
 Tested on BeagleBone with Angstrom distro v2012-05.  The Raspberry Pi does not supply enough USB power for this device without a powered-USB hub.  The RAVEn requires up to 500mA.
 
+This library reads the data streaming from the device, parses it and publishes the information to an MQTT server.  Other services can subscribe to the MQTT topics to receive updates from the meter.  An example is "Whims" (https://github.com/stormboy/whims) which can receive the data via MQTT, serve via Socket.io whereupon a web browser may render the information. 
+
 Dependencies
 ------------
 
     npm install serialport
     npm install mqttjs
     npm install xml2js
+
+TODO
+----
+
+Separate Raven library from MQTT upload. Just emit events from Raven device.

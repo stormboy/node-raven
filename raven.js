@@ -1,6 +1,6 @@
 /**
- * Reads energy data from a smart meter via a RAVEn dongle.
- * Publishes data to a MQTT service.
+ * Reads energy data from a smart meter via a RAVEn RFA-Z106 dongle (http://www.rainforestautomation.com/raven).
+ * Publishes energy data to a MQTT service.
  */
 
 var config = require('./settings'),
@@ -9,9 +9,10 @@ var config = require('./settings'),
    	mqtt = require('mqttjs'),
    	crypto = require('crypto');
 
-var TOPIC_power = "/power/house/demand";
-var TOPIC_energyIn = "/energy/house/in";
-var TOPIC_energyOut = "/energy/house/out";
+// MQTT topics
+var TOPIC_power     = config.powerPath | "/power/house/demand";
+var TOPIC_energyIn  = config.energyInPath | "/energy/house/in";
+var TOPIC_energyOut = config.energyOutPath | "/energy/house/out";
 
 // date offset for RAVEn which presents timestamp as seconds since 2000-01-01
 var dateOffset = Date.UTC(2000, 0, 1);
@@ -41,7 +42,8 @@ serialPort.on("open", function () {
 		mqttClient.on('connack', function(packet) {
 			if (packet.returnCode === 0) {
 				console.log('MQTT sessionOpened');
-				// subscribe to requests for state
+
+				// subscribe to topics for requests for initial-content (state).
 				mqttClient.subscribe({topic: TOPIC_power+"?"});
 				mqttClient.subscribe({topic: TOPIC_energyIn+"?"});
 				mqttClient.subscribe({topic: TOPIC_energyOut+"?"});
@@ -79,6 +81,7 @@ serialPort.on("open", function () {
 			}
 		});
 
+        // connect to MQTT service
 		crypto.randomBytes(24, function(ex, buf) {		// create a random client ID for MQTT
 			var clientId = buf.toString('hex');
 			mqttClient.connect({
@@ -147,8 +150,6 @@ serialPort.on("open", function () {
 			buffer = "";	// reset the read buffer
 		}
 	});
-
-	// TODO subscribe to initial-content messages
 	
 	// Possible commands: get_time, get_current_summation_delivered; get_connection_status; get_instantaneous_demand; get_current_price; get_message; get_device_info.
 	var queryCommand = "<Command><Name>get_connection_status</Name></Command>\r\n"
