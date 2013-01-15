@@ -1,0 +1,7 @@
+{
+	"serverPort" : 8000,
+	"serialPath" : "/dev/serial/by-id/usb-Rainforest_RFA-Z106-RA-PC_RAVEn_v2.3.21-if00-port0",
+	"mqttHost"   : "192.168.0.23",
+	"mqttPort"   : 1883,
+	"log"        : false
+}
