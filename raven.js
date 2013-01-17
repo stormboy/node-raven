@@ -10,9 +10,11 @@ var config = require('./settings'),
    	crypto = require('crypto');
 
 // MQTT topics
-var TOPIC_power     = config.powerPath | "/power/house/demand";
-var TOPIC_energyIn  = config.energyInPath | "/energy/house/in";
-var TOPIC_energyOut = config.energyOutPath | "/energy/house/out";
+var TOPIC_power     = config.powerPath || "/power/house/demand";
+var TOPIC_energyIn  = config.energyInPath || "/energy/house/in";
+var TOPIC_energyOut = config.energyOutPath || "/energy/house/out";
+
+console.log("power topic: " + TOPIC_power);
 
 // date offset for RAVEn which presents timestamp as seconds since 2000-01-01
 var dateOffset = Date.UTC(2000, 0, 1);
