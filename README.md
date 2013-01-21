@@ -13,10 +13,13 @@ Dependencies
 ------------
 
     npm install serialport
-    npm install mqttjs
     npm install xml2js
+
+For raven_mqtt.js
+    npm install mqttjs
 
 TODO
 ----
 
-Separate Raven library from MQTT upload. Just emit events from Raven device.
+More events from Raven object, such as device info
+Separate Raven module from Raven MQTT code. 

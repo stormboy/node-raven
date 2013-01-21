@@ -1,0 +1,22 @@
+{
+  "name": "node-raven",
+  "version": "0.0.1",
+  "description": "A module for communicating with a RFA-Z106 RAVEn USB stick",
+  "main": "raven.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stormboy/node-raven.git"
+  },
+  "keywords": [
+    "Rainforest",
+    "smart",
+    "energy",
+    "Zigbee"
+  ],
+  "author": "Warren Bloomer",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
