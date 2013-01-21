@@ -16,10 +16,12 @@ Dependencies
     npm install xml2js
 
 For raven_mqtt.js
+
     npm install mqttjs
 
 TODO
 ----
 
 More events from Raven object, such as device info
+
 Separate Raven module from Raven MQTT code. 
