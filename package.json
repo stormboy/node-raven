@@ -1,5 +1,5 @@
 {
-  "name": "node-raven",
+  "name": "raven",
   "version": "0.0.1",
   "description": "A module for communicating with a RFA-Z106 RAVEn USB stick",
   "main": "raven.js",
