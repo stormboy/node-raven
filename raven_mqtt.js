@@ -3,8 +3,7 @@
  * Publishes energy data to a MQTT service.
  */
 
-var options = require('./settings'),
-	raven = require("./raven.js")
+var raven = require("./raven.js")
    	mqtt = require('mqttjs'),
    	crypto = require('crypto');
 
@@ -27,13 +26,13 @@ var RavenMqtt = function(options) {
 	this.raven = new raven.Raven(options);
 	
 	this.raven.on("open", function() {
-		openHandler(self);
+		openHandler(self, options);
 	});
 }
 
 
 // handle serial port open
-function openHandler (self) {
+function openHandler (self, options) {
 	var mqttClient;
 
 	if (TRACE) {

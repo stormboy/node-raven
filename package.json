@@ -16,6 +16,11 @@
     "energy",
     "Zigbee"
   ],
+  "dependencies": {
+    "mqttjs": "*",
+    "serialport": "*",
+    "xml2js": "*"
+  },
   "author": "Warren Bloomer",
   "license": "BSD",
   "readmeFilename": "README.md"
