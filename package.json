@@ -1,8 +1,14 @@
 {
-  "name": "node-raven",
+  "name": "meem-raven",
   "version": "0.0.1",
   "description": "A module for communicating with a RFA-Z106 RAVEn USB stick",
   "main": "raven.js",
+  "dependencies": {
+    "meem": "*",
+    "mqtt": "*",
+    "serialport": "*",
+    "xml2js": "*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
