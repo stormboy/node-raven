@@ -4,7 +4,7 @@
   "description": "A module for communicating with a RFA-Z106 RAVEn USB stick",
   "main": "raven.js",
   "dependencies": {
-    "meem": "*",
+    "meem": "git://github.com/stormboy/node-meem.git",
     "mqtt": "*",
     "serialport": "*",
     "xml2js": "*"
@@ -22,11 +22,6 @@
     "energy",
     "Zigbee"
   ],
-  "dependencies": {
-    "mqttjs": "*",
-    "serialport": "*",
-    "xml2js": "*"
-  },
   "author": "Warren Bloomer",
   "license": "BSD",
   "readmeFilename": "README.md"
