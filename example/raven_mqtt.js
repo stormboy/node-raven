@@ -34,6 +34,8 @@ var RavenMqtt = function(options) {
 // handle serial port open
 RavenMqtt.prototype._initMqtt = function(options) {
 
+	var self = this;
+
 	if (TRACE) {
 		console.log('serial device open');
 	}
