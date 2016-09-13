@@ -11,7 +11,11 @@ var TRACE = true;
 var meem = new raven.RavenMqtt(options);
 
 meem.raven.on("open", function() {
-	meem.raven.getDeviceInfo();
+	//meem.raven.restart();
+	//meem.raven.getDeviceInfo();
+	//meem.raven.getConnectionStatus();
+	//meem.raven.getMeterList();
+	//meem.raven.getMeterInfo();
 });
 
 //meem.open();
